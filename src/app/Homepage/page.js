@@ -89,7 +89,7 @@ const page = () => {
                                     className='w-full h-full object-cover'
                                     />
                                     <div className='absolute inset-0 bg-transparent hover:bg-gray-700/30 transition duration-300'></div>
-                                    <div className='bg-white md:text-[18px] text-[11px] lg:rounded-xl rounded-sm text-center md:py-2 py-1 md:px-9 px-1 text-black cursor-pointer absolute top-1/2 left-1/2 transform  md:top-[50%] md:left-[50%] md:transform -translate-x-1/2 -translate-y-1/2 lg:top-[200px] lg:left-[180px] lg:transform-none'><p>Tops</p></div>
+                                    <div className='bg-white md:text-[18px] text-[11px] lg:rounded-xl rounded-sm text-center md:py-2 py-1 md:px-9 px-1 text-black cursor-pointer absolute top-1/2 left-1/2 transform  md:top-[50%] md:left-[50%] md:transform -translate-x-1/2 -translate-y-1/2 lg:top-[200px] lg:left-[230px] lg:transform-none'><p>Tops</p></div>
                             </div>
                             </Link>)
                     })
