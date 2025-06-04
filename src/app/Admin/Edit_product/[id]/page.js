@@ -63,7 +63,7 @@ const page = () => {
         
           
           try {
-            const resp = await axios.put(`http://localhost:5000/api/products/${id}`,formData,{
+            const resp = await axios.put(`https://rnd-backend-1.onrender.com/api/products/${id}`,formData,{
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
@@ -85,7 +85,7 @@ const page = () => {
       useEffect(()=>{
           const getProductInfo =async()=>{
             try {
-                const resp = await axios.get(`http://localhost:5000/api/products/${id}`)
+                const resp = await axios.get(`https://rnd-backend-1.onrender.com/api/products/${id}`)
                 const product = resp.data
                 setForm({
                   userId: admin,
@@ -200,7 +200,7 @@ const page = () => {
                       {existingImages.map((img, index) => (
                         <img
                           key={index}
-                          src={`http://localhost:5000/uploads/${img}`}
+                          src={`https://rnd-backend-1.onrender.com/uploads/${img}`}
                           alt="Uploaded"
                           className="w-[80px] h-[80px] object-cover rounded border"
                         />

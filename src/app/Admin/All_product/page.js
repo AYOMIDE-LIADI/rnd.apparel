@@ -22,7 +22,7 @@ const page = () => {
     useEffect(()=>{
         const getAllProducts =async ()=>{
             try {
-                const resp = await axios.get("http://localhost:5000/api/products")
+                const resp = await axios.get("https://rnd-backend-1.onrender.com/api/products")
                 if (resp.status === 200){
                     setallProducts(resp.data)
                 }else{
@@ -37,7 +37,7 @@ const page = () => {
 
     const deleteProduct =async()=>{
         try {
-            const resp = await axios.delete(`http://localhost:5000/api/products/${productToDelete}`)
+            const resp = await axios.delete(`https://rnd-backend-1.onrender.com/api/products/${productToDelete}`)
             if (resp.status === 200){
                 setallProducts(prev => prev.filter(product => product._id !== productToDelete));
                 setDeleteModal(false)
@@ -67,7 +67,7 @@ const page = () => {
                             width={150}
                             src={
                                 firstImage
-                                ? `http://localhost:5000/uploads/${firstImage.trim()}`
+                                ? `https://rnd-backend-1.onrender.com/uploads/${firstImage.trim()}`
                                 : "/fallback.jpg"
                             }
                             />

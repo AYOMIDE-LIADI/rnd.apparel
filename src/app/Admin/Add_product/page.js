@@ -64,7 +64,7 @@ const page = () => {
     });
   
     try {
-      const resp = await axios.post('http://localhost:5000/api/products', formData, {
+      const resp = await axios.post('https://rnd-backend-1.onrender.com/api/products', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

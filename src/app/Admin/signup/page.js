@@ -60,7 +60,7 @@ const page = () => {
         e.preventDefault();
         if(validate()){
             try {
-                const resp = await axios.post("http://localhost:5000/api/users/register/admin", formData)
+                const resp = await axios.post("https://rnd-backend-1.onrender.com/api/users/register/admin", formData)
                 if(resp.status === 201 || resp.status === 200){
                   console.log("Registration Successful");
                   window.location.href = "/Admin/login";

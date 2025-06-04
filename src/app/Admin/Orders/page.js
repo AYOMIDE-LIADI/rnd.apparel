@@ -30,7 +30,7 @@ const page = () => {
 
   const handleDeleteOrder=async(id)=>{
         try {
-            const resp = await axios.delete(`http://localhost:5000/api/order/${id}`)
+            const resp = await axios.delete(`https://rnd-backend-1.onrender.com/api/order/${id}`)
             if(resp.status === 200){
                 alert("order deleted successfully")
                 window.location.reload()

@@ -17,7 +17,7 @@ const page = () => {
         useEffect(()=>{
             const getProduct = async ()=>{
                 try {
-                    const resp = await axios.get('http://localhost:5000/api/products')
+                    const resp = await axios.get('https://rnd-backend-1.onrender.com/api/products')
                     if (resp.status === 200) {
                         const storedUserId = localStorage.getItem("userId"); 
                         if (storedUserId) {
@@ -81,7 +81,7 @@ const page = () => {
                             <div className='relative lg:h-[450px] md:h-[450px] h-[150px]'>
                                     <Image
                                     src={ firstImage
-                                        ? `http://localhost:5000/uploads/${firstImage.trim()}`
+                                        ? `https://rnd-backend-1.onrender.com/uploads/${firstImage.trim()}`
                                         :'/pic11.avif'}
                                     height={400}
                                     width={400}

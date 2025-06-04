@@ -88,7 +88,7 @@ const page = () => {
           
         if(validate()){
             try {
-                const resp = await axios.post("http://localhost:5000/api/order", orderData);
+                const resp = await axios.post("https://rnd-backend-1.onrender.com/api/order", orderData);
                 if (resp.status === 201){
                     const order_id = resp.data._id
                     setFormData({

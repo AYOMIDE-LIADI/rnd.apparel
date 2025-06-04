@@ -123,7 +123,7 @@ const page = () => {
 
     const addToCart1 = async () => {
         try {
-          const resp = await axios.post("http://localhost:5000/api/cart/add",product);      
+          const resp = await axios.post("https://rnd-backend-1.onrender.com/api/cart/add",product);      
           if (resp.status===200) {
             alert("Added to cart successfully!");
             console.log(resp.data);
@@ -140,7 +140,7 @@ const page = () => {
       useEffect(()=>{
         const getSingleProduct =async()=>{
             try {
-                const resp = await axios.get(`http://localhost:5000/api/products/${id}`)
+                const resp = await axios.get(`https://rnd-backend-1.onrender.com/api/products/${id}`)
                 if (resp.status === 200){
                     const setUserId = localStorage.getItem("userId")
                     if(setUserId){
@@ -179,7 +179,7 @@ const page = () => {
                     <div className='md:flex gap-3.5 items-center mb-3.5'>
                     {singleProduct?.images?.[0] && (
                     <Image
-                        src={`http://localhost:5000/uploads/${singleProduct.images[0]}`}
+                        src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[0]}`}
                         width={450}
                         height={400}
                         alt="image-0"
@@ -187,7 +187,7 @@ const page = () => {
                     )}            
                         {singleProduct?.images?.[1] && (
                         <Image
-                            src={`http://localhost:5000/uploads/${singleProduct.images[1]}`}
+                            src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[1]}`}
                             width={450}
                             height={400}
                             alt="image-0"
@@ -198,7 +198,7 @@ const page = () => {
                     </div>
                     {singleProduct?.images?.[3] && (
                     <Image
-                        src={`http://localhost:5000/uploads/${singleProduct.images[3]}`}
+                        src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[3]}`}
                         width={450}
                         height={400}
                         alt="image-0"
@@ -206,7 +206,7 @@ const page = () => {
                     )}            
                         {singleProduct?.images?.[4] && (
                         <Image
-                            src={`http://localhost:5000/uploads/${singleProduct.images[4]}`}
+                            src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[4]}`}
                             width={450}
                             height={400}
                             alt="image-0"

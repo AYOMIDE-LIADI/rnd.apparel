@@ -17,7 +17,7 @@ const CartPage = () => {
 
   const fetchCart = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/cart/${userId}`);
+      const res = await fetch(`https://rnd-backend-1.onrender.com/api/cart/${userId}`);
       const data = await res.json();
       if (data.success) {
         updateCart(data.cart.items);
@@ -29,7 +29,7 @@ const CartPage = () => {
   
   const handleIncrease = async (productId) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/cart/add", {
+      const response = await axios.post("https://rnd-backend-1.onrender.com/api/cart/add", {
         userId,
         items: [
           {
@@ -56,7 +56,7 @@ const CartPage = () => {
     if (item.quantity <= 1) return;
   
     try {
-      await axios.post("http://localhost:5000/api/cart/add", {
+      await axios.post("https://rnd-backend-1.onrender.com/api/cart/add", {
         userId,
         items: [
           {
@@ -77,7 +77,7 @@ const CartPage = () => {
   
   const handleDelete = async (productId) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/api/cart/${userId}/${productId}`);
+      const res = await axios.delete(`https://rnd-backend-1.onrender.com/api/cart/${userId}/${productId}`);
       if (res.data.success) {
         fetchCart(); 
       }else{
@@ -146,7 +146,7 @@ const CartPage = () => {
                     {
                       item?.productId?.images?.[2] && (
                         <Image
-                          src={`http://localhost:5000/uploads/${item.productId.images[2]}`}
+                          src={`https://rnd-backend-1.onrender.com/uploads/${item.productId.images[2]}`}
                           alt="image"
                           height={230}
                           width={100}

@@ -24,7 +24,7 @@ const PaymentPage = () => {
     
     const fetchOrder = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/order/${id}`);
+        const res = await axios.get(`https://rnd-backend-1.onrender.com/api/order/${id}`);
         setOrder(res.data);
       } catch (err) {
         console.error("Error fetching order:", err);
@@ -48,7 +48,7 @@ const PaymentPage = () => {
     text: "Pay Now",
     onSuccess: async() =>{
       try {
-         await axios.delete(`http://localhost:5000/api/cart/clear/${userId}`)
+         await axios.delete(`https://rnd-backend-1.onrender.com/api/cart/clear/${userId}`)
          clearCart();
          localStorage.removeItem(`cartCount_${userId}`);
          router.push("/Success")
