@@ -124,7 +124,7 @@ const page = () => {
                         )
            }
 
-        <p className='text-[10px]'>Already have an account? <Link className='cursor-pointer text-yellow-200' href="/login">Log in</Link> </p>
+        <p className='text-[10px]'>Already have an account? <Link className='cursor-pointer text-yellow-400' href="/login">Log in</Link> </p>
         </div>
 
         <button className="absolute bottom-[-10px] right-[190px] bg-amber-400 rounded-3xl py-[5px] px-[10px] cursor-pointer hover:text-white">Submit</button>
