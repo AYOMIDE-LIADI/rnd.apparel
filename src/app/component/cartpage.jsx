@@ -135,82 +135,88 @@ const CartPage = () => {
             </div>
             <hr />
             <div className="h-[430px] overflow-y-auto">
-              {
-              cartItems.length > 0 ? (
-              cartItems.map((item) => (
-                <div
-                  key={item.productId._id}
-                  className="flex gap-3.5 items-center my-2.5"
-                >
-                  <div>
-                    {
-                      item?.productId?.images?.[2] && (
-                        <Image
-                          src={`https://rnd-backend-1.onrender.com/uploads/${item.productId.images[2]}`}
-                          alt="image"
-                          height={230}
-                          width={100}
-                          className="border border-black"
-                        />
+  {cartItems.length > 0 ? (
+    cartItems.map((item) => (
+      <div
+        key={item.productId._id}
+        className="flex gap-3.5 items-center my-2.5"
+      >
+        <div>
+          {item?.productId?.images?.[2] && (
+            <Image
+              src={item.productId.images[2].trim()}
+              alt="product-image"
+              height={230}
+              width={100}
+              className="border border-black"
+            />
+          )}
+        </div>
 
-                      )  
-                    }
-                  </div>
-                  <div className="pt-[22px] w-full relative">
-                    <p className="text-black text-[14px] mb-1.5">
-                      {item.productId.name}
-                    </p>
-                    <div className="flex gap-2.5 items-center">
-                      {item.productId.oldPrice && (
-                        <p className="text-black text-[12px] mb-1 line-through">
-                          ${item.productId.oldPrice}
-                        </p>
-                      )}
-                      <p className="text-black text-[12px] mb-1">
-                        ${item.productId.newPrice}
-                      </p>
-                    </div>
-                    <p className="text-black text-[12px] mb-1">
-                      Quantity: {item.quantity}
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <div className="border rounded-md w-[80px] items-center flex justify-between px-[8px] mt-2.5">
-                        <p
-                          className="text-[25px] cursor-pointer"
-                          onClick={() => handleDecrease(item.productId._id)}
-                        >
-                          -
-                        </p>
-                        <p className="text-[15px]">{item.quantity}</p>
-                        <p
-                          className="text-[25px] cursor-pointer"
-                          onClick={() => handleIncrease(item.productId._id)}
-                        >
-                          +
-                        </p>
-                      </div>
-                      <div className="text-[14px] pr-[40px]">
-                        <AnimatePresence mode="wait">
-                          <motion.p
-                            key={item.quantity * item.productId.newPrice}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            ${(item.quantity * item.productId.newPrice).toFixed(2)}
-                          </motion.p>
-                        </AnimatePresence>
-                      </div>
-                    </div>
-                    <AiOutlineDelete
-                      onClick={() => handleDelete(item.productId._id)}
-                      className="absolute right-0 top-[25px] cursor-pointer"
-                    />
-                  </div>
-                </div>
-              ))): (<p className="mt-2.5 font-bold">No Item Added</p>)}
+        <div className="pt-[22px] w-full relative">
+          <p className="text-black text-[14px] mb-1.5">
+            {item.productId.name}
+          </p>
+
+          <div className="flex gap-2.5 items-center">
+            {item.productId.oldPrice && (
+              <p className="text-black text-[12px] mb-1 line-through">
+                ${item.productId.oldPrice}
+              </p>
+            )}
+            <p className="text-black text-[12px] mb-1">
+              ${item.productId.newPrice}
+            </p>
+          </div>
+
+          <p className="text-black text-[12px] mb-1">
+            Quantity: {item.quantity}
+          </p>
+
+          <div className="flex justify-between items-center">
+            <div className="border rounded-md w-[80px] items-center flex justify-between px-[8px] mt-2.5">
+              <p
+                className="text-[25px] cursor-pointer"
+                onClick={() => handleDecrease(item.productId._id)}
+              >
+                -
+              </p>
+              <p className="text-[15px]">{item.quantity}</p>
+              <p
+                className="text-[25px] cursor-pointer"
+                onClick={() => handleIncrease(item.productId._id)}
+              >
+                +
+              </p>
             </div>
+
+            <div className="text-[14px] pr-[40px]">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={item.quantity * item.productId.newPrice}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  ${(item.quantity * item.productId.newPrice).toFixed(2)}
+                </motion.p>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          <AiOutlineDelete
+            onClick={() => handleDelete(item.productId._id)}
+            className="absolute right-0 top-[25px] cursor-pointer"
+          />
+        </div>
+      </div>
+    ))
+  ) : (
+    <p className="mt-2.5 font-bold">No Item Added</p>
+  )}
+</div>
+
             <hr />
             <div className="flex justify-between text-black text-[20px] py-[10px]">
               <p>SubTotal</p>

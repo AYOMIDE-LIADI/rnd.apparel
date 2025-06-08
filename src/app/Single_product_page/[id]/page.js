@@ -179,44 +179,45 @@ const page = () => {
         <div className="container px-[50px] text-black pt-[90px]">
             <p className='text-[14px] mb-5'>Home - {singleProduct.name}</p>
             <div className='md:flex md:gap-[40px] mb-[40px]'>
-                <div>
-                    <div className='md:flex gap-3.5 items-center mb-3.5'>
-                    {singleProduct?.images?.[0] && (
-                    <Image
-                        src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[0]}`}
-                        width={450}
-                        height={400}
-                        alt="image-0"
-                    />
-                    )}            
-                        {singleProduct?.images?.[1] && (
-                        <Image
-                            src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[1]}`}
-                            width={450}
-                            height={400}
-                            alt="image-0"
-                            className='md:mt-0 mt-4'
-                        />
-                        )}
+            <div>
+            <div className='md:flex gap-3.5 items-center mb-3.5'>
+                {singleProduct?.images?.[0] && (
+                <Image
+                    src={singleProduct.images[0].trim()}
+                    width={450}
+                    height={400}
+                    alt="image-0"
+                />
+                )}
+                {singleProduct?.images?.[1] && (
+                <Image
+                    src={singleProduct.images[1].trim()}
+                    width={450}
+                    height={400}
+                    alt="image-1"
+                    className='md:mt-0 mt-4'
+                />
+                )}
+            </div>
 
-                    </div>
-                    {singleProduct?.images?.[3] && (
-                    <Image
-                        src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[3]}`}
-                        width={450}
-                        height={400}
-                        alt="image-0"
-                    />
-                    )}            
-                        {singleProduct?.images?.[4] && (
-                        <Image
-                            src={`https://rnd-backend-1.onrender.com/uploads/${singleProduct.images[4]}`}
-                            width={450}
-                            height={400}
-                            alt="image-0"
-                        />
-                        )}
-                </div>
+            {singleProduct?.images?.[3] && (
+                <Image
+                src={singleProduct.images[3].trim()}
+                width={450}
+                height={400}
+                alt="image-3"
+                />
+            )}
+            {singleProduct?.images?.[4] && (
+                <Image
+                src={singleProduct.images[4].trim()}
+                width={450}
+                height={400}
+                alt="image-4"
+                />
+            )}
+            </div>
+
                 <form  className='md:w-[450px] md:mt-0 mt-6'>
                     <p className='text-[30px] mb-2.5'>{singleProduct.name}</p>
                     <p className='text-[9px] text-gray-500 mb-2.5'>SKU: 2375563872942324</p>

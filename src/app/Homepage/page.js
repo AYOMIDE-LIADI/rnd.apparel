@@ -71,30 +71,38 @@ const page = () => {
             </div>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10 px-4 sm:px-6 lg:px-[50px]'>
-            {
-                products.length > 0 ?(
-                    products.map((product)=>{
-                        const firstImage = Array.isArray(product.images)
-                        ? product.images[2]?.trim()
-                        : product.images?.split(',')[2]?.trim();
-                        return ( <Link key={product._id} href={`/Single_product_page/${product._id}`} >
-                            <div className='relative lg:h-[450px] md:h-[450px] h-[150px]'>
-                                    <Image
-                                    src={ firstImage
-                                        ? `https://rnd-backend-1.onrender.com/uploads/${firstImage.trim()}`
-                                        :'/pic11.avif'}
-                                    height={400}
-                                    width={400}
-                                    alt='image'
-                                    className='w-full h-full object-cover'
-                                    />
-                                    <div className='absolute inset-0 bg-transparent hover:bg-gray-700/30 transition duration-300'></div>
-                                    <div className='bg-white md:text-[18px] text-[11px] lg:rounded-xl rounded-sm text-center md:py-2 py-1 md:px-9 px-1 text-black cursor-pointer absolute top-1/2 left-1/2 transform  md:top-[50%] md:left-[50%] md:transform -translate-x-1/2 -translate-y-1/2 lg:top-[200px] lg:left-[230px] lg:transform-none'><p>Tops</p></div>
-                            </div>
-                            </Link>)
-                    })
-                ) : (<p className="text-[40px] text-black text-center justify-center items-center">No Product Available</p>)
-            }
+        {
+  products.length > 0 ? (
+    products.map((product) => {
+      const firstImage = Array.isArray(product.images)
+        ? product.images[2]
+        : product.images?.split(',')[2];
+
+      return (
+        <Link key={product._id} href={`/Single_product_page/${product._id}`}>
+          <div className='relative lg:h-[450px] md:h-[450px] h-[150px]'>
+            <Image
+              src={firstImage?.trim() || '/pic11.avif'}
+              height={400}
+              width={400}
+              alt='image'
+              className='w-full h-full object-cover'
+            />
+            <div className='absolute inset-0 bg-transparent hover:bg-gray-700/30 transition duration-300'></div>
+            <div className='bg-white md:text-[18px] text-[11px] lg:rounded-xl rounded-sm text-center md:py-2 py-1 md:px-9 px-1 text-black cursor-pointer absolute top-1/2 left-1/2 transform  md:top-[50%] md:left-[50%] md:transform -translate-x-1/2 -translate-y-1/2 lg:top-[200px] lg:left-[230px] lg:transform-none'>
+              <p>Tops</p>
+            </div>
+          </div>
+        </Link>
+      );
+    })
+  ) : (
+    <p className="text-[40px] text-black text-center justify-center items-center">
+      No Product Available
+    </p>
+  )
+}
+
         </div>
         <div className='text-black px-[50px] mt-[30px] items-center'>
             <p className='text-[30px]'>Latest Arivals</p>

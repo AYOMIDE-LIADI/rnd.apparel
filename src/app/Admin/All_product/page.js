@@ -54,45 +54,63 @@ const page = () => {
     <div className='flex '>
       <Sidebar/>
         <div className='text-black py-[70px] px-[70px] gap-[60px] grid grid-cols-3 ml-[400px]'>
-            { allProducts.length > 0 ?
-                (allProducts.map(allproduct =>{
-                    const firstImage = Array.isArray(allproduct.images)
-                    ? allproduct.images[0]?.trim()
-                    : allproduct.images?.split(',')[0]?.trim();
-                     return(<div key={allproduct._id} className='bg-gray-400 rounded-xl h-[390px] w-[270px] py-2.5 px-2.5 cursor-pointer'>
-                        <div className='flex flex-col items-center'>
-                            <Image
-                            alt='image'
-                            height={150}
-                            width={150}
-                            src={
-                                firstImage
-                                ? `https://rnd-backend-1.onrender.com/uploads/${firstImage.trim()}`
-                                : "/fallback.jpg"
-                            }
-                            />
-                            <div className='text-[13px] mt-3.5 text-center '>
-                                <p className='py-0.5'>Name: {allproduct.name}</p>
-                                <div className='flex gap-1.5 items-center justify-center py-0.5'>
-                                    <p>Price:</p>
-                                    <p className='line-through'>${allproduct.oldPrice}</p>
-                                    <p>${allproduct.newPrice}</p>
-                                </div>
-                                <p className='break-words py-0.5 w-full max-w-[300px] truncate'>Description:{allproduct.description}</p>
-                                <p className='break-words py-0.5 w-full max-w-[300px] truncate'>Category:{allproduct.category}</p>
+        {allProducts.length > 0 ? (
+  allProducts.map(allproduct => {
+    const firstImage = Array.isArray(allproduct.images)
+      ? allproduct.images[0]?.trim()
+      : allproduct.images?.split(',')[0]?.trim();
 
-                                <div className='flex gap-[20px] items-center justify-center mt-1.5'>
-                                    <Link  href={`/Admin/Edit_product/${allproduct._id}`}>
-                                        <FaEdit className='cursor-pointer ' size={15}/>
-                                    </Link>
-                                    <MdDelete onClick={()=>openModal(allproduct._id)} className='cursor-pointer ' size={15}/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>)
-                })): (
-                    <p className='text-center font-bold'>No Product Added</p>
-                  )} 
+    const imageUrl = firstImage
+      ? firstImage.startsWith('http')
+        ? firstImage.trim()
+        : `https://rnd-backend-1.onrender.com/uploads/${firstImage.trim()}`
+      : "/fallback.jpg";
+
+    return (
+      <div
+        key={allproduct._id}
+        className="bg-gray-400 rounded-xl h-[390px] w-[270px] py-2.5 px-2.5 cursor-pointer"
+      >
+        <div className="flex flex-col items-center">
+          <Image
+            alt="product image"
+            height={150}
+            width={150}
+            src={imageUrl}
+          />
+          <div className="text-[13px] mt-3.5 text-center">
+            <p className="py-0.5">Name: {allproduct.name}</p>
+            <div className="flex gap-1.5 items-center justify-center py-0.5">
+              <p>Price:</p>
+              <p className="line-through">${allproduct.oldPrice}</p>
+              <p>${allproduct.newPrice}</p>
+            </div>
+            <p className="break-words py-0.5 w-full max-w-[300px] truncate">
+              Description: {allproduct.description}
+            </p>
+            <p className="break-words py-0.5 w-full max-w-[300px] truncate">
+              Category: {allproduct.category}
+            </p>
+
+            <div className="flex gap-[20px] items-center justify-center mt-1.5">
+              <Link href={`/Admin/Edit_product/${allproduct._id}`}>
+                <FaEdit className="cursor-pointer" size={15} />
+              </Link>
+              <MdDelete
+                onClick={() => openModal(allproduct._id)}
+                className="cursor-pointer"
+                size={15}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  })
+) : (
+  <p className="text-center font-bold">No Product Added</p>
+)}
+
             {
                 deleteModal && (
                     <div className="fixed inset-0 z-50 flex items-center opacity-85 justify-center">

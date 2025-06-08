@@ -62,44 +62,49 @@ const page = () => {
                     <p className='mb-[20px]'>My cart</p>
                     <hr className='mb-3'></hr>
                     {
-                        cartItems.map((items)=>{
-                            return(
+  cartItems.map((items) => {
+    return (
+      <div key={items.productId._id} className="flex justify-between mb-2.5">
+        <div>
+          <div className="flex gap-3.5 items-center">
+            <div>
+              {items?.productId?.images?.[2] && (
+                <Image
+                  src={items.productId.images[2].trim()} // Cloudinary URL
+                  alt="image"
+                  height={230}
+                  width={100}
+                  className="border border-black"
+                />
+              )}
+            </div>
 
-                    <div key={items.productId._id} className='flex justify-between mb-2.5'>
-                        <div>
-                            <div className='flex gap-3.5 items-center'>
-                                
-                                                    <div >
-                                                        {
-                                                                items?.productId?.images?.[2] && (
-                                                               <Image
-                                                                src={`https://rnd-backend-1.onrender.com/uploads/${items.productId.images[2]}`}
-                                                                alt='image'
-                                                                height={230}
-                                                                width={100}
-                                                                className='border border-black'
-                                                               />
+            <div className="w-full relative">
+              <p className="text-black text-[14px] mb-1.5">{items.productId.name}</p>
+              <p className="text-black text-[12px] mb-1">${items.productId.newPrice}</p>
+              <p className="text-black text-[12px] mb-1">Color: Forest Green</p>
+              <p className="text-black text-[12px] mb-1">Size: Medium</p>
+            </div>
+          </div>
+        </div>
 
-                                                           ) 
-                                                        }
-                                                    </div>
-                                                    <div className=' w-full relative'>
-                                                        <p className='text-black text-[14px] mb-1.5'>{items.productId.name}</p>
-                                                        <p className='text-black text-[12px] mb-1'>${items.productId.newPrice}</p>
-                                                        <p className='text-black text-[12px] mb-1'>Color: Forest Green</p>
-                                                        <p className='text-black text-[12px] mb-1'>Size: Medium</p>
-                                                        
-                                                    </div>
-                                </div>
-                        </div>
-                        <div className='flex  items-center gap-[20px] relative'>
-                                <div><p className='text-[14px] pr-[40px] ml-[70px]'>${items.productId.newPrice}</p></div>
-                                <AiOutlineDelete onClick={()=> handleDelete(items.productId._id)} size={22} className=' cursor-pointer absolute right-[-12px]'/>
-                        </div>
-                    </div>
-                            )
-                        })
-                    }
+        <div className="flex items-center gap-[20px] relative">
+          <div>
+            <p className="text-[14px] pr-[40px] ml-[70px]">
+              ${items.productId.newPrice}
+            </p>
+          </div>
+          <AiOutlineDelete
+            onClick={() => handleDelete(items.productId._id)}
+            size={22}
+            className="cursor-pointer absolute right-[-12px]"
+          />
+        </div>
+      </div>
+    );
+  })
+}
+
                     <hr className='my-3 px-[50px]'></hr>
                     <div className='flex gap-2 items-center mb-3'>
                         <FiTag/>
