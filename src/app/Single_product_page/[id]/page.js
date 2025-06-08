@@ -122,6 +122,10 @@ const page = () => {
     
 
     const addToCart1 = async () => {
+        const user = localStorage.getItem("userId")
+        if (!user){
+            alert("Please login to add item to cart");
+        }
         try {
           const resp = await axios.post("https://rnd-backend-1.onrender.com/api/cart/add",product);      
           if (resp.status===200) {
