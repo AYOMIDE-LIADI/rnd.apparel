@@ -60,11 +60,8 @@ const page = () => {
       ? allproduct.images[0]?.trim()
       : allproduct.images?.split(',')[0]?.trim();
 
-    const imageUrl = firstImage
-      ? firstImage.startsWith('http')
-        ? firstImage.trim()
-        : `https://rnd-backend-1.onrender.com/uploads/${firstImage.trim()}`
-      : "/fallback.jpg";
+      const imageUrl = firstImage || "/fallback.jpg";
+
 
     return (
       <div
