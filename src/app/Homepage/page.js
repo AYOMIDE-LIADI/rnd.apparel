@@ -44,7 +44,7 @@ return (
         <Headers />
         <Cartpage/>
         <div className=' absolute md:bottom-[70px] bottom-[180px] px-[50px]'>
-            <p className='text-black md:text-[50px] text-[23px] md:mb-0 mb-[35px]'>Start with the basics</p>
+            <p className='text-black md:text-[50px] text-[23px] md:mb-0 mb-[25px]'>Start with the basics</p>
             <div className='flex items-center gap-3'>
                 <div className='bg-white text-black items-center py-2 px-[10px] rounded-md cursor-pointer'>Shop Women</div>
                 <div className='bg-white text-black items-center py-2 px-[10px] rounded-md cursor-pointer'>Shop Men</div>
