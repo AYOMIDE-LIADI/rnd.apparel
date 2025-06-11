@@ -68,7 +68,7 @@ const page = () => {
         <div>
             <form onSubmit={handleSubmit} className="flex gap-[20px] relative px-[90px] py-[30px]">
                 <div>
-                    <p className="md:mb-[15px] mb-[13px] md:text-[16px] text-[11px] py-1">Email</p>  
+                    <p className="err md:mb-[15px] mb-[13px] md:text-[16px] text-[11px] py-1">Email</p>  
                     <p className="md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1">Password</p>
                 </div>
                 <div className='flex flex-col'>
