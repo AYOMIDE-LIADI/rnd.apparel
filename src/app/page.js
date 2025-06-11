@@ -19,11 +19,11 @@ const page = () => {
                 try {
                     const resp = await axios.get('https://rnd-backend-1.onrender.com/api/products')
                     if (resp.status === 200) {
+                        setProducts(resp.data);
                         const storedUserId = localStorage.getItem("userId"); 
                         if (storedUserId) {
                             const savedCount = localStorage.getItem(`cartCount_${storedUserId}`);
                             setCartCount(savedCount ? parseInt(savedCount) : 0);
-                            setProducts(resp.data);
                         } else {
                           setCartCount(0);
                         }
