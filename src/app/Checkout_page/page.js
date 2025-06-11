@@ -167,7 +167,7 @@ const page = () => {
                 </div>
                 <div>
                     <p className='mb-[10px] font-bold'>Shipping Address</p>
-                    <select name='country' value={formData.country} onChange={handleChange} className='text-[13px] w-[90%] py-[8px] border rounded-md'>
+                    <select name='country' value={formData.country} onChange={handleChange} className='text-[13px] w-[90%] py-[8px] px-1.5 border rounded-md'>
                     <option >Country/Region</option>
                     <option value="spain">Spain</option>
                     <option value="nigeria">Nigeria</option>
