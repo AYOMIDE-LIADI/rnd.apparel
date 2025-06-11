@@ -93,7 +93,7 @@ const page = () => {
            <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Password</p>
         </div>
         <div className="flex flex-col">
-            <div className='relative tool'>
+            <div className='relative '>
                 <input  className="border md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1 px-2" type="text" name="firstName" value={formData.firstName} onChange={handleChange}/>
                 {errors.firstName&& <p className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.firstName}</p>}
             </div>
