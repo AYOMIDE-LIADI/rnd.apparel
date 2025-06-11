@@ -15,6 +15,9 @@ const CartPage = () => {
     const { isSidebarOpen, closeSideBar } = useSidebar();
     const { userId } = useUser();
 
+    // console.log(cartItems);
+    
+
   const fetchCart = async () => {
     try {
       const res = await fetch(`https://rnd-backend-1.onrender.com/api/cart/${userId}`);
@@ -154,9 +157,10 @@ const CartPage = () => {
         </div>
 
         <div className="pt-[22px] w-full relative">
-          <p className="text-black text-[14px] mb-1.5">
-            {item.productId.name}
-          </p>
+        <p className="text-black text-[14px] mb-1.5">
+          {item?.productId?.name || 'Loading...'}
+        </p>
+
 
           <div className="flex gap-2.5 items-center">
             {item.productId.oldPrice && (

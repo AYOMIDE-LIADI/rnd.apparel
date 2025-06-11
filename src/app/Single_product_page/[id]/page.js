@@ -25,11 +25,6 @@ const page = () => {
     const {id} = useParams()
     
     
-
-    const handleAddToCart = () => {
-    addToCart(count); 
-    };
-    
     const [selectedColor, setSelectedColor] = useState('');
 
 
@@ -125,12 +120,13 @@ const page = () => {
         const user = localStorage.getItem("userId")
         if (!user){
             alert("Please login to add item to cart");
+            return;
         }
         try {
           const resp = await axios.post("https://rnd-backend-1.onrender.com/api/cart/add",product);      
           if (resp.status===200) {
             alert("Added to cart successfully!");
-            console.log(resp.data);
+            addToCart(count); 
           }
         }catch (err) {
            console.log(err.message);
@@ -146,11 +142,11 @@ const page = () => {
             try {
                 const resp = await axios.get(`https://rnd-backend-1.onrender.com/api/products/${id}`)
                 if (resp.status === 200){
+                    setSingleProduct(resp.data)
                     const setUserId = localStorage.getItem("userId")
                     if(setUserId){
                         const count = localStorage.getItem(`cartCount_${setUserId}`)
                         setCartCount(count ? parseInt(count): 0)
-                        setSingleProduct(resp.data)
                     }else{
                         setCartCount(0)
                     }
