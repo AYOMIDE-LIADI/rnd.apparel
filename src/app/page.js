@@ -44,7 +44,7 @@ const page = () => {
             <Headers />
             <Cartpage/>
             <div className=' absolute md:bottom-[70px] bottom-[180px] px-[50px]'>
-                <p className='text-black text-[50px]'>Start with the basics</p>
+                <p className='text-black md:text-[50px] text-[23px]'>Start with the basics</p>
                 <div className='flex items-center gap-3'>
                     <div className='bg-white text-black items-center py-2 px-[10px] rounded-md cursor-pointer'>Shop Women</div>
                     <div className='bg-white text-black items-center py-2 px-[10px] rounded-md cursor-pointer'>Shop Men</div>
@@ -65,7 +65,7 @@ const page = () => {
         </div>
         <hr className='border border-black'></hr>
         <div className='flex justify-between text-black md:px-[50px] px-[30px] mt-[30px] items-center'>
-            <p className='text-[30px]'>Shop by category</p>
+            <p className='md:text-[30px] text-[20px]'>Shop by category</p>
             <div className='flex gap-4 text-[15px]'>
                 <p className='hover:underline cursor-pointer'>Women</p>
                 <p className='hover:underline cursor-pointer'>Men</p>
@@ -102,7 +102,7 @@ const page = () => {
     );
   })
 ) : (
-  <p className="text-[40px] text-black text-center justify-center items-center">
+  <p className="md:text-[40px] text-[20px] text-black text-center justify-center items-center">
     No Product Available
   </p>
 )}
@@ -187,13 +187,13 @@ const page = () => {
         </div>
         <div className='relative bg-center bg-no-repeat bg-cover h-[500px]  items-center flex  justify-center' style={{ backgroundImage: "url('/gif.avif')" }}>
             <div className='flex flex-col items-center gap-4'>
-            <p className='text-black text-[50px]  text-center'>30%-70% On Selected Styles</p>
+            <p className='text-black md:text-[50px] text-[23px]  text-center'>30%-70% On Selected Styles</p>
             <div className='button bg-white text-black items-center py-2 px-[10px] mt-[50px] w-[150px] rounded-md text-center cursor-pointer'>Shop Sale</div>
             </div>
         </div>
         <div className='px-[50px] sm:items-center md:justify-center py-[100px] text-black' >
-            <p className='text-[40px]'>Subscribe and save 10%</p>
-            <p className=''>on your first order</p>
+            <p className='md:text-[40px] text-[20px]'>Subscribe and save 10%</p>
+            <p>on your first order</p>
             <div className='pt-[30px]'>
                 <input
                     type="email"

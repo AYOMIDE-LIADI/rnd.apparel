@@ -14,10 +14,7 @@ const CartPage = () => {
     const { cartCount,cartItems,setCartCount, addToCart, removeFromCart,updateCart } = useCounter();
     const { isSidebarOpen, closeSideBar } = useSidebar();
     const { userId } = useUser();
-
-    // console.log(cartItems);
     
-
   const fetchCart = async () => {
     try {
       const res = await fetch(`https://rnd-backend-1.onrender.com/api/cart/${userId}`);
