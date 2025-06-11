@@ -80,42 +80,42 @@ const page = () => {
       
   return (
     <div className="text-black justify-center items-center flex h-screen">
-    <div className="shadow-2xl p-6 rounded-e-full">
+    <div className="shadow-2xl md:p-6 p-4 rounded-e-full">
     <p className="text-center pb-[30px] font-extrabold text-[24px]">Sign Up</p>
     <div>
       <form onSubmit={handleSubmit} className="flex gap-[20px] relative px-[90px] py-[30px]">
         <div>
-           <p className="mb-[15px] py-1">First Name</p>
-           <p className="mb-[15px] py-1">Last Name</p>
-           <p className="mb-[15px] py-1">Email</p>
-           <p className="mb-[15px] py-1">Phone</p>
-           <p className="mb-[15px] py-1">Address</p>
-           <p className="mb-[15px] py-1">Password</p>
+           <p className="md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1">First Name</p>
+           <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Last Name</p>
+           <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Email</p>
+           <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Phone</p>
+           <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Address</p>
+           <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Password</p>
         </div>
         <div className="flex flex-col">
             <div className='relative'>
-                <input  className="border mb-[15px] py-1 px-2" type="text" name="firstName" value={formData.firstName} onChange={handleChange}/>
-                {errors.firstName&& <p className='text-red-700 text-[10px] absolute bottom-0'>{errors.firstName}</p>}
+                <input  className="border md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1 px-2" type="text" name="firstName" value={formData.firstName} onChange={handleChange}/>
+                {errors.firstName&& <p className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.firstName}</p>}
             </div>
             <div className='relative'>
-                <input className="border mb-[15px] py-1 px-2" type="text" name="lastName" value={formData.lastName} onChange={handleChange}/>
-                {errors.lastName&& <p className='text-red-700 text-[10px] absolute bottom-0'>{errors.lastName} </p>}
+                <input className="border md:text-[16px] text-[11px] md:mb-[15px] mb-[8px] py-1 px-2" type="text" name="lastName" value={formData.lastName} onChange={handleChange}/>
+                {errors.lastName&& <p  className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.lastName} </p>}
             </div>
             <div className='relative'>
-                <input className="border mb-[15px] py-1 px-2" type="email" name="email" value={formData.email} onChange={handleChange} />
-                {errors.email&& <p className='text-red-700 text-[10px] bottom-0 absolute'>{errors.email}</p>}
+                <input className="border md:text-[16px] text-[11px] md:mb-[15px] mb-[8px] py-1 px-2" type="email" name="email" value={formData.email} onChange={handleChange} />
+                {errors.email&& <p  className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.email}</p>}
             </div>
             <div className='relative'>
-                <input className="border mb-[15px] py-1 px-2" type="text" name="phone" value={formData.phone} onChange={handleChange}/>
-                {errors.phone&& <p className='text-red-700 text-[10px]  bottom-0 absolute'>{errors.phone}</p>}
+                <input className="border md:text-[16px] text-[11px] md:mb-[15px] mb-[8px] py-1 px-2" type="text" name="phone" value={formData.phone} onChange={handleChange}/>
+                {errors.phone&& <p  className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.phone}</p>}
             </div>
             <div className='relative'>
-                <input className="border mb-[15px] py-1 px-2" type="text" name="address" value={formData.address} onChange={handleChange}/>
-                {errors.address&& <p className='text-red-700 text-[10px]  bottom-0 absolute'>{errors.address}</p>}
+                <input className="border md:text-[16px] text-[11px] md:mb-[15px] mb-[8px] py-1 px-2" type="text" name="address" value={formData.address} onChange={handleChange}/>
+                {errors.address&& <p  className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.address}</p>}
             </div>
            <div className='relative'>
-            <input className="border mb-[15px] py-1 px-2" type="password" name="password" value={formData.password} onChange={handleChange}/>
-            {errors.password&& <p className='text-red-700 text-[10px] absolute bottom-0'>{errors.password}</p>}
+            <input className="border md:text-[16px] text-[11px] md:mb-[15px] mb-[8px] py-1 px-2" type="password" name="password" value={formData.password} onChange={handleChange}/>
+            {errors.password&& <p  className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.password}</p>}
            </div>
            {
                         wrongCredentials&&(
@@ -126,7 +126,7 @@ const page = () => {
         <p className='text-[10px]'>Already have an account? <Link className='cursor-pointer text-yellow-400' href="/login">Log in</Link> </p>
         </div>
 
-        <button className="absolute bottom-[-10px] right-[190px] bg-amber-400 rounded-3xl py-[5px] px-[10px] cursor-pointer hover:text-white">Submit</button>
+        <button className="absolute bottom-[-10px] right-[190px] bg-amber-400 md:text-[16px] text-[11px] rounded-3xl py-[5px] md:px-[10px] px-[5px] cursor-pointer hover:text-white">Submit</button>
       </form>
     </div>
     </div>

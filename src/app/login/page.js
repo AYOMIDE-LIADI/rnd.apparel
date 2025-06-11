@@ -63,22 +63,22 @@ const page = () => {
     }
   return (
     <div className="text-black justify-center items-center flex h-screen">
-    <div className='shadow-2xl rounded-e-full py-[50px]'>
-        <p className="text-center pb-[30px] font-extrabold text-[24px]">Log in</p>
+    <div className='shadow-2xl rounded-e-full md:py-[50px] py-[38px]'>
+        <p className="text-center md:pb-[30px] pb-[16px] font-extrabold text-[24px]">Log in</p>
         <div>
             <form onSubmit={handleSubmit} className="flex gap-[20px] relative px-[90px] py-[30px]">
                 <div>
-                    <p className="mb-[15px] py-1">Email</p>  
-                    <p className="mb-[15px] py-1">Password</p>
+                    <p className="md:mb-[15px] mb-[13px] md:text-[16px] text-[11px] py-1">Email</p>  
+                    <p className="md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1">Password</p>
                 </div>
                 <div className='flex flex-col'>
-                    <div className='relative mb-4'>
-                        <input  className="border py-1 px-2" type="email" name="email" value={formData.email} onChange={handleChange}/>
-                        {error.email&&<p className='text-red-700 text-[10px] absolute  bottom-[-15px]'>{error.email}</p>}
+                    <div className='relative md:mb-4'>
+                        <input  className="border md:text-[16px] text-[11px] md:mb-[1px] mb-[8px] py-1 px-2" type="email" name="email" value={formData.email} onChange={handleChange}/>
+                        {error.email&&<p  className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{error.email}</p>}
                     </div>
                     <div className='relative'>
-                        <input className="border mb-[15px] py-1 px-2" type="password" name="password" value={formData.password} onChange={handleChange}/>
-                        {error.password&&<p className='text-red-700 text-[10px] absolute bottom-0'>{error.password}</p>}   
+                        <input className="border md:text-[16px] text-[11px] md:mb-[15px] mb-[8px] py-1 px-2" type="password" name="password" value={formData.password} onChange={handleChange}/>
+                        {error.password&&<p  className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{error.password}</p>}   
                     </div>
                 </div>
                 {
@@ -89,7 +89,7 @@ const page = () => {
 
                 <p className='absolute bottom-[-35px] right-[175px] text-[9px]'>Don't have an account? <Link href='/Signup' className='text-yellow-400'> Sign in</Link></p>  
                 
-                <button className="absolute bottom-[-10px] right-[190px] bg-amber-400 rounded-3xl py-[5px] px-[10px] cursor-pointer hover:text-white">Login</button>
+                <button className="absolute bottom-[-10px] right-[190px] bg-amber-400 md:text-[16px] text-[11px] rounded-3xl py-[5px] md:px-[10px] px-[5px] cursor-pointer hover:text-white">Login</button>
             </form>
         </div>
     </div>
