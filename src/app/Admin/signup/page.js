@@ -82,17 +82,17 @@ const page = () => {
         <div className="shadow-2xl md:p-6 p-4 rounded-e-full">
         <p className="text-center pb-[30px] font-extrabold text-[24px]">Sign Up</p>
         <div>
-          <form onSubmit={handleSubmit} className="flex gap-[20px] relative px-[90px] py-[30px]">
+          <form onSubmit={handleSubmit} className="flex gap-[20px] relative md:px-[90px] px-[50px] py-[30px]">
             <div>
-               <p className="md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1">First Name</p>
-               <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Last Name</p>
-               <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Email</p>
-               <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Phone</p>
-               <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Address</p>
-               <p className="md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Password</p>
+               <p className="whitespace-nowrap md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1">First Name</p>
+               <p className=" whitespace-nowrapmd:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Last Name</p>
+               <p className=" whitespace-nowrapmd:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Email</p>
+               <p className=" whitespace-nowrapmd:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Phone</p>
+               <p className=" whitespace-nowrap md:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Address</p>
+               <p className=" whitespace-nowrapmd:mb-[15px] mb-[8px] md:text-[16px] md:mt-0 mt-[12px] text-[11px] py-1">Password</p>
             </div>
             <div className="flex flex-col">
-                <div className='relative'>
+                <div className='relative '>
                     <input  className="border md:mb-[15px] mb-[8px] md:text-[16px] text-[11px] py-1 px-2" type="text" name="firstName" value={formData.firstName} onChange={handleChange}/>
                     {errors.firstName&& <p className='text-red-700 md:text-[10px] text-[7px] absolute md:bottom-0 bottom-[-2px]'>{errors.firstName}</p>}
                 </div>
