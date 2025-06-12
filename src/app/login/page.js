@@ -87,7 +87,7 @@ const page = () => {
                     )
                 }
 
-                <p className='absolute bottom-[-35px] md:right-[175px] right-[165px] text-[9px]'>Don't have an account? <Link href='/Signup' className='text-yellow-400'> Sign in</Link></p>  
+                <p className='absolute bottom-[-35px] md:right-[175px] right-[175px] text-[9px]'>Don't have an account? <Link href='/Signup' className='text-yellow-400'> Sign in</Link></p>  
                 
                 <button className="absolute bottom-[-10px] right-[190px] bg-amber-400 md:text-[16px] text-[11px] rounded-3xl py-[5px] md:px-[10px] px-[5px] cursor-pointer hover:text-white">Login</button>
             </form>
